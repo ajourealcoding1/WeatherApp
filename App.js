@@ -7,7 +7,7 @@ import WeatherDetailScreen from './WeatherDetailScreen';
  const AppNavigator = createStackNavigator(
     {
     CityList : CityList,
-    Detail ; WeatherDetailScreen,
+    Detail : WeatherDetailScreen,
     },
     {
     initialRouteName: 'CityList',

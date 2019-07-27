@@ -4,10 +4,11 @@ import { Constants } from 'expo';
 
 
 export default class WeatherDetailScreen extends React.Component {
-  static navigationOptions = {
 
-    title: 'Weather Information',
-
+  static navigationOptions = ({navigation}) => {
+return {
+   title: `Weather Info: ${navigation.getParam('city', 'Unknown')}`,
+};
   };
 
 

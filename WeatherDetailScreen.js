@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Constants } from 'expo';
 
 
@@ -54,16 +54,19 @@ return {
     let minTempCelsius = this.state.main.temp_min - 273.15;
     let humidity = this.state.main.humidity;
     let description = this.state.weather[0].description;
+    let icon = this.state.weather[0].icon;
 
 
     return (
       <View style={styles.container}>
-        <Text style={styles.todayWeather}> 오늘의 날씨 </Text>
-        <Text style={styles.info}>온도: {celsius.toFixed(1)}℃</Text>
+        <Text style={styles.todayWeather}> 오늘의 날씨 {'\n'} </Text>
+        <Image style={styles.icon}
+                            source ={{uri : `https://openweathermap.org/img/wn/${icon}@2x.png` }}/ >
+        <Text style={styles.info}>  {'\n'} 날씨: {description}</Text>
+        <Text style={styles.info}> {'\n'}온도: {celsius.toFixed(1)}℃</Text>
         <Text style={styles.info}> 최저온도: {minTempCelsius.toFixed(1)}℃</Text>
         <Text style={styles.info}> 최고온도: {maxTempCelsius.toFixed(1)}℃</Text>
         <Text style={styles.info}> 습도: {humidity.toFixed(1)}%</Text>
-        <Text style={styles.info}> 날씨: {description}</Text>
       </View>
     );
 
@@ -86,6 +89,16 @@ const styles = StyleSheet.create({
   info:{
     fontSize: 25,
     fontWeight:'bold'
+  },
+  icon:{
+    backgroundColor: 'yellow',
+    justifyContent:'center',
+    alignItems:'center',
+    width: 100,
+    height: 100,
+    borderRadius:20,
+    borderColor:'blue',
+    borderWidth:3,
   }
 
 });

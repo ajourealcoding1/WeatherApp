@@ -7,7 +7,11 @@ export default class WeatherDetailScreen extends React.Component {
 
   static navigationOptions = ({navigation}) => {
 return {
-   title: `Weather Info: ${navigation.getParam('city', 'Unknown')}`,
+   title: `            Weather Info : ${navigation.getParam('city', 'Unknown')}`,
+   headerTintColor:'black',
+   headerTitleStyle:{
+    fontWeight:'bold',
+   },
 };
   };
 
@@ -28,7 +32,6 @@ return {
 
     const { navigation } = this.props;
     const city = navigation.getParam('city', null);
-    //const city = 'Daejeon';
 
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=6be3be648c795ee8faadb5bf2e84b4d8`)
       .then(response => response.json())
@@ -43,8 +46,8 @@ return {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={styles.container}>
-          <Text>데이터를 불러오는 중입니다.</Text>
+        <View style={styles.loading}>
+          <Text> 날씨 정보를 가져오고 있습니다. </Text>
         </View>
       )
     }
@@ -59,7 +62,7 @@ return {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.todayWeather}> 오늘의 날씨 {'\n'} </Text>
+        <Text style={styles.todayWeather}>오늘의 날씨 {'\n'} </Text>
         <Image style={styles.icon}
                             source ={{uri : `https://openweathermap.org/img/wn/${icon}@2x.png` }}/ >
         <Text style={styles.info}>  {'\n'} 날씨: {description}</Text>
@@ -76,8 +79,15 @@ return {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'skyblue',
     marginTop: Constants.statusBarHeight,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  loading:{
+    flex:2,
+    fontSize: 25,
+    backgroundColor: 'skyblue',
     justifyContent:'center',
     alignItems:'center',
   },
@@ -97,7 +107,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius:20,
-    borderColor:'blue',
+    borderColor:'white',
     borderWidth:3,
   }
 

@@ -66,13 +66,20 @@ const styles = StyleSheet.create({
     },
 
     item:{
-    borderColor:'orange',
-    borderWidth:1,
+    flex: 1,
+    height: 50,
+    justifyContent: 'center',
+    borderRadius: 15,
+    margin :2,
+    borderWidth: 3,
+    borderColor:'pink',
+    backgroundColor:'#4169e1',
     },
 
     text:{
     fontSize:20,
     textAlign:'center',
+    color:'white',
     }
 
 

@@ -7,7 +7,7 @@ export default class WeatherDetailScreen extends React.Component {
 
   static navigationOptions = ({navigation}) => {
 return {
-   title: `            Weather Info : ${navigation.getParam('city', 'Unknown')}`,
+   title: `          Weather Info : ${navigation.getParam('city', 'Unknown')}`,
    headerTintColor:'black',
    headerTitleStyle:{
     fontWeight:'bold',
@@ -65,7 +65,7 @@ return {
         <Text style={styles.todayWeather}>오늘의 날씨 {'\n'} </Text>
         <Image style={styles.icon}
                             source ={{uri : `https://openweathermap.org/img/wn/${icon}@2x.png` }}/ >
-        <Text style={styles.info}>  {'\n'} 날씨: {description}</Text>
+        <Text style={styles.description}>  {'\n'} 날씨: {description}</Text>
         <Text style={styles.info}> {'\n'}온도: {celsius.toFixed(1)}℃</Text>
         <Text style={styles.info}> 최저온도: {minTempCelsius.toFixed(1)}℃</Text>
         <Text style={styles.info}> 최고온도: {maxTempCelsius.toFixed(1)}℃</Text>
@@ -96,10 +96,13 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     color:'blue',
   },
-  info:{
+  description:{
     fontSize: 25,
     fontWeight:'bold'
   },
+  info:{
+      fontSize: 25,
+    },
   icon:{
     backgroundColor: 'yellow',
     justifyContent:'center',

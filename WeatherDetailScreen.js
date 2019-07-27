@@ -53,6 +53,7 @@ return {
     let maxTempCelsius = this.state.main.temp_max - 273.15;
     let minTempCelsius = this.state.main.temp_min - 273.15;
     let humidity = this.state.main.humidity;
+    let description = this.state.weather[0].description;
 
 
     return (
@@ -60,7 +61,8 @@ return {
         <Text> 온도: {celsius.toFixed(1)}℃</Text>
         <Text> 최저온도: {minTempCelsius.toFixed(1)}℃</Text>
         <Text> 최고온도: {maxTempCelsius.toFixed(1)}℃</Text>
-        <Text> 습도: {humidity.toFixed(1)}</Text>
+        <Text> 습도: {humidity.toFixed(1)}%</Text>
+        <Text> 날씨: {description}</Text>
       </View>
     );
 

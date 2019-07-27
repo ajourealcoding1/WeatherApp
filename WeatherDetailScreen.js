@@ -74,5 +74,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     marginTop: Constants.statusBarHeight,
+    justifyContent:'center',
+    alignItems:'center',
   },
 });

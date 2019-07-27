@@ -27,10 +27,10 @@ return {
   componentDidMount() {
 
     const { navigation } = this.props;
-    // const city = navigation.getParam('city', null);
-    const city = 'Daejeon';
+    const city = navigation.getParam('city', null);
+    //const city = 'Daejeon';
 
-    fetch(`http://demo6468405.mockable.io/weather-crawlers/current-weathers/by-city-name/${city}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=6be3be648c795ee8faadb5bf2e84b4d8`)
       .then(response => response.json())
       .then(info => {
         this.setState({

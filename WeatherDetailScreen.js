@@ -58,11 +58,12 @@ return {
 
     return (
       <View style={styles.container}>
-        <Text> 온도: {celsius.toFixed(1)}℃</Text>
-        <Text> 최저온도: {minTempCelsius.toFixed(1)}℃</Text>
-        <Text> 최고온도: {maxTempCelsius.toFixed(1)}℃</Text>
-        <Text> 습도: {humidity.toFixed(1)}%</Text>
-        <Text> 날씨: {description}</Text>
+        <Text style={styles.todayWeather}> 오늘의 날씨 </Text>
+        <Text style={styles.info}>온도: {celsius.toFixed(1)}℃</Text>
+        <Text style={styles.info}> 최저온도: {minTempCelsius.toFixed(1)}℃</Text>
+        <Text style={styles.info}> 최고온도: {maxTempCelsius.toFixed(1)}℃</Text>
+        <Text style={styles.info}> 습도: {humidity.toFixed(1)}%</Text>
+        <Text style={styles.info}> 날씨: {description}</Text>
       </View>
     );
 
@@ -77,4 +78,14 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
   },
+  todayWeather:{
+    fontSize:40,
+    fontWeight:'bold',
+    color:'blue',
+  },
+  info:{
+    fontSize: 25,
+    fontWeight:'bold'
+  }
+
 });

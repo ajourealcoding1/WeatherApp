@@ -1,14 +1,12 @@
 import React from 'react';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import CityList from './CityList'
 
 
-export default class App extends React.Component {
+ const AppNavigator = createStackNavigator({
+    Home:{
+    screen : CityList
+    }
+    });
 
-
-  render() {
- return (
-    <CityList/>
-    );
-  }
-}
-
+export default createAppContainer(AppNavigator);

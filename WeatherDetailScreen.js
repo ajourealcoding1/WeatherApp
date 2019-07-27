@@ -50,10 +50,13 @@ return {
     }
 
     let celsius = this.state.main.temp - 273.15;
+    let humidity = this.state.main.humidity;
+
 
     return (
       <View style={styles.container}>
-        <Text>온도: {celsius.toFixed(1)}</Text>
+        <Text> 온도: {celsius.toFixed(1)}℃</Text>
+        <Text> 습도: {humidity.toFixed(1)}</Text>
       </View>
     );
 

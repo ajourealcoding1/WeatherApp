@@ -5,7 +5,7 @@
 ### Clone the repository
 
 ```bash
-$ git clone https://github.com/ajourealcoding/WeatherApp.git
+$ git clone https://github.com/ajourealcoding1/WeatherApp.git
 ```
 
 ### Install whole dependencies

@@ -21,7 +21,7 @@ $ npm install
 $ expo start
 ```
 
-### 구현사항
+## 구현사항
 
 ```bash
 * OpenWeather에서 api 호출하여 선택한 도시의 날씨 정보를 가져왔습니다.

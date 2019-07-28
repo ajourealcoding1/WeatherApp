@@ -40,6 +40,53 @@ $ expo start
     - 그리고 City List라고 써있는 버튼을 만들어 City List를 보여주는 화면으로 넘어갈 수 있도록 했습니다.
     - clickHandler = () => navigation.navigate("CityList") ;
       이 코드는 클릭 시(onPress) clickHandler(CityList.js로 이동)가 작동하도록 하였습니다.
+      
+- 시작페이지의 TouchableOpacity에 애니메이션 효과를 넣었습니다. 
+    - 아래의 코드처럼 react-native의 Animated를 사용하여 해당하는 TouchableOpacity를 포함한 View에 애니메이션 효과를 넣었습니다. 
+     ```bash
+          constructor(props){
+            super(props);
+            this.state = {
+              value: new Animated.Value(0),
+              position: new Animated.ValueXY({x:100, y:0}),
+            };
+          }
+
+          componentDidMount(){
+            this._moveX();
+          }
+
+          _moveX(){
+            Animated.spring (
+              this.state.position, {
+                toValue : {x:0, y:0},
+                friction : 2,
+                tension : 50,
+            }).start();
+          }
+
+          _getStyle(){
+            return {
+              transform:[
+                {translateX:this.state.position.x},
+              ]
+            }
+          }
+          
+          ...
+          render() {
+            ...
+            return(
+                ...
+                    <Animated.View style= {this._getStyle()}>
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={clickHandler}>
+                            <Text style={styles.text}>  City List  </Text>
+                        </TouchableOpacity>
+                    </Animated.View>
+    ```
+
 
 - 보기에 더 깔끔하게 디자인들을 변경하였습니다.
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text,  StyleSheet , View, TouchableOpacity } from 'react-native';
+import { Button, Text,  StyleSheet , View, TouchableOpacity, Image } from 'react-native';
 import {Constants} from 'expo';
 
 export default class StartPage extends React.Component{
@@ -12,10 +12,11 @@ clickHandler = () => navigation.navigate("CityList") ;
  return (
 
     <View style={styles.container}>
-        <Text style={styles.title}> Weather App {'\n\n'}</Text>
-
+        <Text style={styles.title}> Weather App </Text>
+        <Image style= {styles.image} source= {require('./WeatherImage.png')}/>
+        <Text> {'\n\n'}</Text>
             <TouchableOpacity
-            style = {styles.button}
+            style = {[styles.button, padding= 20]}
                 onPress={clickHandler}>
                 <Text style={styles.text}>  City List  </Text>
             </TouchableOpacity>
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
      alignItems: 'center',
     },
     button:{
-        backgroundColor:'pink',
+        backgroundColor:'#748BFF',
         width: '70%',
         height: 70,
         justifyContent: 'center',
@@ -47,12 +48,16 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight :'bold',
         color:'black',
+        
     },
     title:{
       fontSize: 60,
       fontWeight :'bold',
-      color:'hotpink',
+      color:'#0033CC',
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    image:{
+
     }
 });

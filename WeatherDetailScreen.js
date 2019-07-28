@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Constants } from 'expo';
+import dataImage from './data.png'; 
 
 
 export default class WeatherDetailScreen extends React.Component {
@@ -47,7 +48,8 @@ return {
     if (this.state.isLoading) {
       return (
         <View style={styles.loading}>
-          <Text> 날씨 정보를 가져오고 있습니다. </Text>
+          <Image style= {styles.image} source= {require('./data.png')}/>
+          <Text style={styles.info}> 날씨 정보를 가져오고 있습니다. </Text>
         </View>
       )
     }
@@ -112,6 +114,12 @@ const styles = StyleSheet.create({
     borderRadius:20,
     borderColor:'white',
     borderWidth:3,
-  }
-
+  },
+  image : {
+    height: '50%',
+    width: '50%',
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius: 20,
+  },
 });

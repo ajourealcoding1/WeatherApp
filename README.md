@@ -45,3 +45,15 @@ $ expo start
 
 - 날씨 아이콘 외에 사용자들의 이해도와 시각적인 부분을 고려하여 첫 화면과 로딩 화면에 이미지를 추가했습니다.
 
+    [ 시작 페이지 사진 첨부 ]
+    ![startPageCapture](./startPageCapture.png)
+
+    [ 도시 리스트 사진 첨부 ]
+    ![cityListCapture](./cityListCapture.png)
+
+    [ 로딩 화면 사진 첨부 ]
+    ![loadingCapture](./loadingCapture.png)
+
+    [ 선택학 도시 날씨 정보 스크린 사진 첨부 ]
+    ![detailScreenCapture](./detailScreenCapture.png)
+
